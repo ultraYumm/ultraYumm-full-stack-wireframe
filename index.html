@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>ultraYumm</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Halant%7CPoppins%7CMontserrat%7CQuicksand&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+	<section class="home">
+		<nav class="navbar skin" role="navigation">
+			<header>
+				<a href="#home" class="noDeco"><img class="homeLogo" src="images/uYhomeLogo.png" alt= "ultraYumm home button"></a>
+	    </header>
+      </nav>
+       <img class= "uYtitle" src="images/uYtitle.png" alt="ultraYumm logo">
+       <h1 class= "hero black" id= "home">Get more energy!<span>&nbsp&nbsp</span><span class= "lighter">pack lighter<span id= "snowyOwl" class= "snowyOwl gif"></span></span></h1>
+        <p id="js-error-message" class="error-message"></p>
+       
+ 
+        <form id="js-getForm">
+            <label for="search-term">Search by name or brand</label>
+            <input type="text" name="search-term" class="plumBackground white search" id="js-search-term" placeholder="granola, Kind Bar, Backpacker's Pantry, etc." required>
+
+            <label for="max-results">Maximum results<span>&nbsp</span><span class= "lighter"><small>- access over 600,000 items!</small></span></label>
+            <input type="number" name="max-results" id="js-max-results" class="plumBackground white max" value= "20">
+            <p>
+            <input type="submit" class= "white montebello blackBackground go" value="Go!" id= "top">
+            </p>
+
+        </form>
+          
+        <div class= "hidden">   
+          
+          <h3>Highest energy results at the top!</h3>       <div class= "printRefresh" id= "printRefresh">
+              
+              <p class= "white montebello purpleBackground button"><a href="#topB" class= "noDeco">Brand only</a></p>
+              
+              <p class= "white montebello blackBackground button"><a href="#home" class= "noDeco">Add items</a></p>
+
+              <button id="js-refreshForm" type="submit" class= "black montebello skinBackground">Clear</button>
+              
+              <button id="js-Print" type="button" class= "dark montebello whiteBackground" >Print</button>
+            </div>
+            
+          <table id= "results">              
+                      
+            <thead class="header" id="myHeader">
+              <tr class= "blueBackground white header">
+                
+                <th class= "imageH">Image</th>
+                <th class= "itemH">Item</th>
+                <th class= "brandH">Brand</th>
+                <th class= "servingH">Serving Quantity</th>
+                <th class= "unitH">Unit</th>
+                <th class= "weightH">Weight (grams)</th>
+                <th class= "caloriesH cal calS">Calories per Serving</th>
+                <th class= "caloriesH">Calories per 100g</th>
+              
+             </tr>
+            </thead>
+          </table>
+         </div>
+
+       
+        <div id="topB" class= "topB"></div>
+        <div class= "hidden">   
+          <h3>Brand Results - Highest energy at the top!</h3>
+          <div class= "printRefresh">
+              
+
+              <p class= "white montebello blackBackground button"><a href="#home" class= "noDeco">Add items</a></p>
+              <button id="js-PrintB" type="button" class= "dark montebello whiteBackground">Print</button>
+
+            </div>
+                   
+          <table id= "resultsB">              
+            
+                       
+            <thead class="header">
+              <tr class= "blueBackground white header">
+                
+                <th class= "imageH">Image</th>
+                <th class= "itemH">Item</th>
+                <th class= "brandH">Brand</th>
+                <th class= "servingH">Serving Quantity</th>
+                <th class= "unitH">Unit</th>
+                <th class= "weightH">Weight (grams)</th>
+                <th class= "caloriesH cal calS">Calories per Serving</th>
+                <th class= "caloriesH">Calories per 100g</th>
+              
+             </tr>
+            </thead>
+          </table>
+         </div>
+
+  </section>
+  
+ 
+<footer>
+     	 <ul class= "social">
+		  	<li class= "social social_icon"> <a href="https://github.com/ultraYumm/uY-app.git" target= "_blank">
+          <img class="social socialcontact_icon" src= "images/Github.png" alt= "Github">
+        </a></li>
+        
+        <li class= "social social_icon"> <a href= "mailto:ultrayumm@gmail.com">
+          <img class= "social contact_icon" src= "images/Email.png" alt= "Email" title="Email your feedback">
+        </a></li> 
+        
+        <li class= "social social_icon"> <a href= "tel:310-989-7801">
+          <img class="social contact_icon" src="images/Text.png" alt="Text" title="Text your feedback re ultraYumm: interesting, valuable, easy to use, any bugs?">
+        </a></li>
+      </ul>
+
+       <div> <a href= "https://www.nutritionix.com" target= "_blank">
+        <img class="attribution" src="images/NutritionixAPI.png" alt="Nutritionix"></a></div>
+     
+    
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <script type="text/javascript"></script>
+    
+
+  </body>
+  
+  </html>
