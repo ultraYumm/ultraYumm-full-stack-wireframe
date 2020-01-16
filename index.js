@@ -48,7 +48,7 @@
        }
         
         $('#results').append(
-          `<tr class= "one whiteBackground black content">
+          `<tr class= "one whiteBackground black">
                  <td class= "imageH"><img class= "tableImage" src=${responseJson.common[i].photo.thumb}></td>
             
                   <td class= "itemH">${responseJson.common[i].food_name}</th>
@@ -75,29 +75,12 @@
 
        if (
         !responseJson.branded[j].serving_weight_grams ||
+        isNaN(responseJson.branded[j].serving_weight_grams) ||
         responseJson.branded[j].full_nutrients[3].value === 0 ||
         responseJson.branded[j].full_nutrients[3].value == 0 ||
         responseJson.branded[j].full_nutrients[3].value === "0" ||
-        responseJson.branded[j].full_nutrients[3].value == "0" ||     
-        isNaN(responseJson.branded[j].full_nutrients) ||
-        isNaN(responseJson.branded[j].full_nutrients[3].value/servingWeightB) ||  
-        responseJson.branded[j].serving_weight_grams == Boolean ||
-        servingWeightB === Boolean ||
-        servingWeightB == null ||
-        servingWeightB === null ||
-        servingWeightB == "null," ||
-        servingWeightB == "Null" ||
-        servingWeightB == "Nan" ||
-        servingWeightB === "NaN" ||
-        servingWeightB == NaN ||
-        servingWeightB === NaN ||
-        servingWeightB == 0 ||
-        servingWeightB === 0 ||
-        servingWeightB === "0" ||
-        servingWeightB === "0" ||
-        servingWeightB === "0 " ||
-        servingWeightB == "boolean" ||
-        typeof(responseJson.branded[j].serving_weight_grams) == 'undefined')
+        responseJson.branded[j].full_nutrients[3].value == "0"
+        )
         
         {
         responseJson.branded.splice(j,1);}
@@ -112,7 +95,7 @@
 
             
         $('#results').append(
-          `<tr class= "one whiteBackground black content">
+          `<tr class= "one whiteBackground black">
                   <td class= "imageH"><img class= "tableImage" src=${responseJson.branded[j].photo.thumb} alt= "Item image"></td>
             
                   <td class= "itemH">${responseJson.branded[j].food_name}</th>
@@ -131,7 +114,7 @@
             </tr>` 
         )
        $('#resultsB').append(
-        `<tr class= "one whiteBackground black content">
+        `<tr class= "one whiteBackground black">
               <td class= "imageH"><img class= "tableImage" src=${responseJson.branded[j].photo.thumb} alt= "Item image"></td>
   
              <td class= "itemH">${responseJson.branded[j].food_name}</th>
@@ -249,27 +232,6 @@
                 scrollTop: $("#top").offset().top
             }, 2000);
     
-    // When the user scrolls the page, execute myFunction to have header freeze at top of page
-    window.onscroll = function() {headerFreeze()};
-    
-    // Get the header
-    var header = document.getElementById("myHeader");
-   
-    
-    // Get the offset position of the navbar
-    var sticky = header.offsetTop;
-    
-    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function headerFreeze() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-        
-      } else {
-        header.classList.remove("sticky");
-      }
-        
-    }   
-    
 
   };
     
@@ -314,7 +276,7 @@
       $('#js-getForm').submit(event => {
         event.preventDefault();
         const searchTerm = $('#js-search-term').val();
-        const maxResults = $('#js-max-results').val();
+        const maxResults = $('#js-max-results').val()/2;
                 
         $('#snowyOwl').append(
            `<img class= "snowyOwl" src="images/snowyOwl.GIF" alt="snowy owl waiting for results">`
@@ -346,5 +308,7 @@ $('#js-refreshFormB').click(function() {
     $('#js-PrintB').click(function() {
     window.print();
 });
+
+
 
 
