@@ -393,7 +393,7 @@ button:hover, .button:hover
 
 
 table {
- width: 280px;
+ width: 100%;
  text-align: center;
  margin-left: auto;
  margin-right: auto;
@@ -496,30 +496,6 @@ td {
 }    
 
 
-.header {
-margin-top: 70px; 
-background-color: rgba(3, 52, 115);
-color: white;
-width: 280px;
-}
-
-.sticky {
-position: fixed;
-top: 0;
-animation: smoothScroll 1s forwards;
-margin-left: 0px;
-}
-
-
-@keyframes smoothScroll {
-0% {
-  transform: translateY(-40px);
-}
-100% {
-  transform: translateY(0px);
-}
-}
-
 .homeForm {
   margin-top: -30px;
 }
@@ -567,8 +543,7 @@ h4 {
   font-size: 14px;
 }
 
-table, .header, th, tr, thead {
-  max-width: 300px;
+table,th, tr, thead {
   font-size: 8px; 
 }
 
@@ -617,8 +592,7 @@ h3 {
   padding-bottom: 50px;
 }
 
-table, .header, th, tr, thead {
-  max-width: 450px;
+table,th, tr, thead {
   font-size: 9px; 
   
 }
@@ -655,11 +629,6 @@ label {
   font-size: 19px;
 }
 
-.header {
-margin-top: 80px; 
-
-}
-
 }
 
 
@@ -692,7 +661,6 @@ h4 {
  }
 
 table, .header, th, tr, thead, td {
-  max-width: 740px;
   font-size: 14px; 
   
 }
@@ -715,8 +683,6 @@ h3 {
 .topB {
   padding-bottom: 65px;
 }
-
-
 
 .printRefresh {
   width: 600px;
@@ -747,7 +713,6 @@ nav {
 .hero {
   font-size: 55px;
   margin-bottom: -40px;
-  font-color: green;
 }
 
 h3 {
@@ -758,15 +723,12 @@ h4 {
   font-size: 40px;
 }
 
-table, .header, th, tr, thead, td {
-  max-width: 1400px;
+table, th, tr, thead, td {
   font-size: 20px; 
 }
 
 .quant, .gram, .cal, .brandId, .itemH{
   font-size: 20px; 
-  font-weight: bold;
-  transition: 0.3s;
 }
 
 .tableImage {
