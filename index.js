@@ -1,5 +1,4 @@
-
-    'use strict';
+'use strict';
 
     const apId = 'e701e874'
     
@@ -40,6 +39,8 @@
         var servingWeight =  responseJson.common[i].serving_weight_grams;
                              responseJson.common[i].serving_weight_grams
         var calPerServing = (responseJson.common[i].full_nutrients[4].value);
+        
+        
         var calPer100g = Math.round((calPerServing/servingWeight)*100);
 
         if (!responseJson.common[i].serving_weight_grams) {
@@ -70,14 +71,15 @@
       // loop through table to append to data table for branded foods
      for (let j = 0; j < responseJson.branded.length & j<maxResults; j++) {
        
-     
+         
+
        if (
         !responseJson.branded[j].serving_weight_grams ||
         responseJson.branded[j].full_nutrients[3].value === 0 ||
         responseJson.branded[j].full_nutrients[3].value == 0 ||
         responseJson.branded[j].full_nutrients[3].value === "0" ||
         responseJson.branded[j].full_nutrients[3].value == "0" ||     
-        isNaN(responseJson.branded[j].full_nutrients) || 
+        isNaN(responseJson.branded[j].full_nutrients) ||
         isNaN(responseJson.branded[j].full_nutrients[3].value/servingWeightB) ||  
         responseJson.branded[j].serving_weight_grams == Boolean ||
         servingWeightB === Boolean ||
@@ -102,10 +104,12 @@
         
         
         var servingWeightB = Number(responseJson.branded[j].serving_weight_grams);
-        var calPerServingB = (responseJson.branded[j].full_nutrients[3].value);
-        let calPer100gB = Math.round((calPerServingB/servingWeightB)*100);
+        var calPerServingB = Number((responseJson.branded[j].full_nutrients[3].value));
+        let calPer100gB = (Math.round((calPerServingB/servingWeightB)*100))
+        
 
-            
+
+
             
         $('#results').append(
           `<tr class= "one whiteBackground black content">
@@ -168,10 +172,10 @@
           /*Get the two elements you want to compare,
           one from current row and one from the next:*/
           x = rows[i].getElementsByClassName("calG")[0];
+
           y = rows[i + 1].getElementsByClassName("calG")[0];
           //check if the two rows should switch place:
-                   
-          
+
           if (Number(x.innerHTML) < Number(y.innerHTML)) {
             //if so, mark as a switch and break the loop:
             shouldSwitch = true;
@@ -228,9 +232,16 @@
     sortTable();
     sortTableB();
     
+    
+
       //display the results section//  
       $('#results').removeClass('hidden');
       $('#resultsB').removeClass('hidden');
+
+      var infinity = document.getElementsByTagName("TR")
+
+      console.log(calPer100g);
+
 
            
      //scroll to the results section//  
@@ -243,6 +254,7 @@
     
     // Get the header
     var header = document.getElementById("myHeader");
+   
     
     // Get the offset position of the navbar
     var sticky = header.offsetTop;
@@ -259,9 +271,10 @@
     }   
     
 
-    };
+  };
     
-    function getResults(query, maxResults) {
+
+      function getResults(query, maxResults) {
       
         const params = {
         query: query,
@@ -320,6 +333,7 @@
     scrollTo(0,0) 
 });
 
+
 $('#js-refreshFormB').click(function() {
     location.reload();
     scrollTo(0,0) 
@@ -329,8 +343,8 @@ $('#js-refreshFormB').click(function() {
     window.print();
 });
 
-
     $('#js-PrintB').click(function() {
     window.print();
 });
+
 
