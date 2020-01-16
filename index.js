@@ -57,7 +57,7 @@
             
                   <td class= "servingH tooltip quant">${Math.round(responseJson.common[i].serving_qty)}<span class="tooltiptext">Serving Quantity</span></th>
             
-                  <td>${responseJson.common[i].serving_unit}</td>
+                  <td class= "unitH">${responseJson.common[i].serving_unit}</td>
             
                   <td class= "weightH tooltip gram">${Math.round(responseJson.common[i].serving_weight_grams)}<span class="tooltiptext">Weight (grams)</span></td>
             
@@ -308,7 +308,5 @@ $('#js-refreshFormB').click(function() {
     $('#js-PrintB').click(function() {
     window.print();
 });
-
-
 
 
