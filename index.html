@@ -15,28 +15,29 @@
 		<nav class="navbar skin" role="navigation">
 			<header>
 				<a href="#home" class="noDeco"><img class="homeLogo" src="images/uYhomeLogo.png" alt= "ultraYumm home button"></a>
+        <span id= "snowyOwl" class= "snowyOwl gif"></span>
 	    </header>
       </nav>
        <img class= "uYtitle" src="images/uYtitle.png" alt="ultraYumm logo">
-       <h1 class= "hero black" id= "home">Get more energy!<span>&nbsp&nbsp</span><span class= "lighter">pack lighter<span id= "snowyOwl" class= "snowyOwl gif"></span></span></h1>
+       <h1 class= "hero black" id= "home">Get more energy!<span>&nbsp;&nbsp;</span><span class= "lighter">pack lighter</span></h1>
         <p id="js-error-message" class="error-message"></p>
-       
- 
+        
         <form id="js-getForm" class= "homeForm">
-            <p class = "search"><label for="search-term">Search by name or brand</label>
-            <input type="text" name="search-term" class="plumBackground white search" id="js-search-term" placeholder="granola, Kind Bar, Backpacker's Pantry, etc." required></p>
+            <p class = "search"><label>Search by name or brand<input type="text" name="search-term" class="plumBackground white search" id="js-search-term" placeholder="granola, Kind Bar, Backpacker's Pantry, etc." required></label>
+            </p>
 
-            <p class="search"><label for="max-results">Maximum results<span>&nbsp</span><span class= "lighter"><small>- access over 600,000 items!</small></span></label>
-            <input type="number" name="max-results" id="js-max-results" class="plumBackground white max" value= "20"></p>
+            <p class="search"><label>Maximum results<span>&nbsp;</span><span class= "lighter"><small>- access over 600,000 items!</small></span><input type="number" name="max-results" id="js-max-results" class="plumBackground white max" value= "20"></label>
+            </p>
             <p>
             <input type="submit" class= "white montebello blackBackground go" value="Go!" id= "top">
             </p>
         </form>
           
-        <div class= "hidden">   
-          <h3>Highest energy results at the top!</h3>       
-          <div class= "printRefresh" id= "printRefresh">
-              <p class= "montebello button"><a href="#topB" class= "noDeco">Brand only</a></p>
+        <div class= "hidden" id= "resultsTitle">
+          <h2 class= "sorry purple">Sorry, there are no results for this search term, try again!</h2> 
+          <h3>See your highest energy results!</h3>       
+          <div class= "printRefresh" id= "printRpurplesh">
+              <p class= "montebello button"><a href="#topB" class= "noDeco">By Brand only</a></p>
               
               <p class= "montebello button"><a href="#home" class= "noDeco">Add items</a></p>
 
@@ -66,8 +67,8 @@
 
        
         <div id="topB" class= "topB"></div>
-        <div class= "hidden">   
-          <h3>Brand Results - Highest energy at the top!</h3>
+        <div class= "hidden"  id= "resultsTitleB">   
+            <h3>See your highest energy results!</h3>
           
             <div class= "printRefresh">
               <p class= "montebello button"><a href="#home" class= "noDeco">Add items</a></p>
