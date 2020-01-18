@@ -36,6 +36,8 @@ This a very very basic prototype! Planned user functionnality includes the follo
 
 ## Author
 Stephanie LeBlond
+email: smaleblond@gmail.com
+cell: 310-989-7801
 
 ## Contributors Wanted!
 Pull requests are welcome. Please aso share your feedback and suggestions.
