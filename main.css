@@ -199,7 +199,7 @@ footer {
   position: inherit;
   width: 50px;
   height: 50px;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
   border-radius: 10px;
   z-index: 100;
 }
@@ -213,8 +213,13 @@ footer {
 } 
 
 .noDeco{
-text-decoration: none;
+ text-decoration: none;
+} 
+
+.noDeco:hover {
+ background-color: transparent;
 }
+
 
 h3 {
   font-size: 15px;
@@ -316,6 +321,7 @@ input {
   padding: 5px;
   border: 1px solid rgba(166, 88, 94, 1);
   transition: 0.1s;
+  margin-left: 4px;
 }
 
 input[type=number] {
@@ -376,14 +382,16 @@ button:hover
 
 .snowyOwl {
   text-align: center;
-  width: 15%; 
-  margin-bottom: 0px;
-  margin-left: 1px;
+  width: 70px; 
+  margin-top: 3px;
+  margin-right: 5px;
+  right: 0;
   border-radius: 5px;
   animation-duration: 4s;
   animation-name: slidein;
-  position: inherit;
+  position: fixed;
   transition-timing-function: ease-in;
+  z-index: 400;
 }
 
 @keyframes slidein {
@@ -518,8 +526,18 @@ padding-top: 200px;
   padding-bottom: 15px;
   margin-top: -20px;
   z-index: 100;
-
 }
+
+.sorry {
+  font-size: 15px;
+  text-align: center;
+}
+
+
+.hidden {
+  display: none;
+}
+
 
 @media only screen and (min-width: 320px) {
 
@@ -738,7 +756,7 @@ nav {
 
 .hero {
   font-size: 55px;
-  margin-bottom: -40px;
+  margin: 40px;
 }
 
 h3 {
@@ -776,12 +794,12 @@ h3 {
 }
 
 input {
-  font-size: 35px;
-  height: 80px;
+  font-size: 30px;
+  height: 75px;
 }
 
 label {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .attribution {
@@ -805,17 +823,17 @@ margin-top: 100px;
 
 
 input[type="submit"]{
-  height: 40px;
+  height: 60px;
   font-size: 25px;
   width: 90px;
   border-radius: 5px;
   padding: 1px;
   transition: 0.1s;
-  margin-top: -100px;
+  margin-top: 50px;
 }
 
 input[type="text"]{
-  width: 40%;
+  width: 55%;
 }
 
 button, .button {
