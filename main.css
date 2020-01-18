@@ -448,6 +448,7 @@ td {
 .imageH {
   width: 10%;
   color: rgba(3, 52, 115);
+  display: none;
 }
 
 .itemH{
@@ -456,6 +457,7 @@ td {
 
 .tableImage {
   width: 10px;
+  display: none;
 }
 
 .quant, .gram, .cal {
@@ -552,6 +554,7 @@ padding-top: 200px;
 
 .hero {
   font-size: 20px;
+  color: red;
 }
 
 h3 {
@@ -563,11 +566,15 @@ h4 {
 }
 
 table,th, tr, thead {
-  font-size: 8px;
+  font-size: 6px;
+}
+
+.itemH, .brandH, .servingH, .unitH, .weightH, .calG, .cal {
+  width: 4%;
 }
 
 .quant, .gram, .cal, .brandId {
-  font-size: 8px; 
+  font-size: 7px; 
   font-weight: bold;
   transition: 0.3s;
 }
@@ -625,9 +632,20 @@ table,th, tr, thead {
   transition: 0.3s;
 }
 
-.tableImage {
-  width: 27px;
+.brandH, .itemH {
+  width: 30%;
 }
+
+.imageH {
+ display: block;
+  
+}
+
+.tableImage {
+  display: block;
+}
+
+
 
 .contact_icon {
   display: flex;
