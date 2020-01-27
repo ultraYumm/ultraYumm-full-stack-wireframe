@@ -1,6 +1,6 @@
 # ultraYumm
 
-ultraYumm helps users select high energy and low weight foods for long distance hiking and packing. 
+ultraYumm™ helps users select high energy and low weight foods for long distance hiking and packing. 
 
 ## Motivation
 
@@ -39,6 +39,7 @@ This a very very basic prototype! Planned user functionnality includes the follo
 Stephanie LeBlond
 email: smaleblond@gmail.com
 cell: 310-989-7801
+Patent Pending
 
 ## Contributors Wanted!
 Pull requests are welcome. Please aso share your feedback and suggestions.
