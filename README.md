@@ -29,6 +29,7 @@ This a very very basic prototype! Planned user functionnality includes the follo
 - Plan daily menus based on variable caloric needs
 - Save and share trips and associated packs
 - Purchase selected foods online
+- See key sustainability information
 - See other nutritional information such as nutrients, minerals,  protein and fat values
 
 ## Built With
