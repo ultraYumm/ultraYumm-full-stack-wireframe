@@ -73,7 +73,8 @@
             
                   <td class= "caloriesH tooltip cal calS">${Math.round(responseJson.common[i].full_nutrients[4].value)}<span class="tooltiptext"><span><- cal per serving</span><span>&nbsp -> cal per 100g</span></span></td>
             
-                  <td class= "caloriesH cal tooltip calG">${calPer100g}</tr>`
+                  <td class= "caloriesH cal tooltip calG">${calPer100g}</td>
+                </tr>`
           )
               
         }
@@ -309,82 +310,63 @@
 })
 
 
+var total = 158,
+    buttons = document.querySelector('.buttons'),
+    pie = document.querySelector('.pie'),
+    activeClass = 'active';
 
-{month: 'Jan', A: 20, B: 5, C: 10},
-{month: 'Feb', A: 30, B: 10, C: 20}
-];
+var continents = {
+  asia: 60,
+  northAmerica : 5,
+  southAmerica: 9,
+  oceania: 1,
+  africa: 15,
+  europe: 12
+};
+
+// work out percentage as a result of total
+var numberFixer = function(num){
+  var result = ((num * total) / 100);
+  return result;
+}
+
+// create a button for each country
+for(property in continents){
+  var newEl = document.createElement('button');
+  newEl.innerText = property;
+  newEl.setAttribute('data-name', property);
+  buttons.appendChild(newEl);
+}
+
+// when you click a button setPieChart and setActiveClass
+  buttons.addEventListener('click', function(e){
+    if(e.target != e.currentTarget){
+      var el = e.target,
+          name = el.getAttribute('data-name');
+      setPieChart(name);
+      setActiveClass(el);
+    }
+    e.stopPropagation();
+  });
+
+var setPieChart = function(name){
+  var number = continents[name],
+      fixedNumber = numberFixer(number),
+      result = fixedNumber + ' ' + total;
+  
+  pie.style.strokeDasharray = result;
+}
+
+var setActiveClass = function(el) {
+  for(var i = 0; i < buttons.children.length; i++) {
+    buttons.children[i].classList.remove(activeClass);
+    el.classList.add(activeClass);
+  }
+}
+
+// Set up default settings
+setPieChart('asia');
+setActiveClass(buttons.children[0]);
 
 
-var xData = ["A", "B", "C"];
-
-var margin = {top: 20, right: 50, bottom: 30, left: 0},
-    width = 350 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
-
-var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], .35);
-
-var y = d3.scale.linear()
-    .rangeRound([height, 0]);
-
-var color = d3.scale.category20();
-
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom");
-
-var svg = d3.select("#chart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-
-var dataIntermediate = xData.map(function (c) {
-return data.map(function (d) {
-    return {x: d.month, y: d[c]};
-});
-});
-
-
-//simple stacked bar chart
-var dataStackLayout = d3.layout.stack()(dataIntermediate);
-
-x.domain(dataStackLayout[0].map(function (d) {
-return d.x;
-}));
-
-y.domain([0,
-d3.max(dataStackLayout[dataStackLayout.length - 1],
-        function (d) { return d.y0 + d.y;})
-])
-.nice();
-
-var layer = svg.selectAll(".stack")
-    .data(dataStackLayout)
-    .enter().append("g")
-    .attr("class", "stack")
-    .style("fill", function (d, i) {
-        return color(i);
-    });
-
-layer.selectAll("rect")
-    .data(function (d) {
-        return d;
-    })
-    .enter().append("rect")
-    .attr("x", function (d) {
-        return x(d.x);
-    })
-    .attr("y", function (d) {
-        return y(d.y + d.y0);
-    })
-    .attr("height", function (d) {
-        return y(d.y0) - y(d.y + d.y0);
-    })
-    .attr("width", x.rangeBand());
-
-svg.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(xAxis);
+Resources

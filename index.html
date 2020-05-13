@@ -53,10 +53,10 @@
             <label>Names</label></p>
             
             <p class="search">
-              <input type="text" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Jack">
-              <input type="text" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Stef">
-              <input type="text" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Emi">
-              <input type="text" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Mari">
+              <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Jack">
+              <input type="text" onfocus="this.value=''"  name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Stef">
+              <input type="text" onfocus="this.value=''"  name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Emi">
+              <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Mari">
              <p>
             <input type="submit" class= "white montebello blackBackground go" value="Go!" id= "top">
             </p>
@@ -82,18 +82,42 @@
              </ul>
         </section>
       
-        <section>
+        <section id= "escalante"> 
     
            <iframe class = "tripImage" src="https://www.google.com/maps/embed?pb=!4v1589308620339!6m8!1m7!1sH9R4rDjmbhhsQVA2f0Dq8Q!2m2!1d36.03291467946964!2d-111.8531019810478!3f9.17!4f0!5f0.7820865974627469"></iframe>
+           
+           
+           <svg class = "pack" width="400" height="200">
+            <text x="0" y="0" dy=".70em">Pack weight: 80 lbs.</text>
+            <rect x="50" y="20" rx="20" ry="20" width="120" height="150"
+            style="fill: rgba(49, 31, 115); opacity:0.8" />
+          </svg>
+          
 
-           <div class="widget">
-            <div class="header">Stacked Bar Chart</div>
-            <div id="chart" class="chart-container">
+           <svg class= "chart" width="1000" height="200" aria-labelledby="title desc" role="img">
+            
+            <g class="bar">
+              <rect width="350" height="29"></rect>
+              <text x="360" y="12" dy=".35em"> 5/1:   3,500 cal.</text>
+            </g>
+            <g class="bar">
+              <rect width="400" height="29" y="40"></rect>
+              <text x="405" y="40" dy=".75em">5/2:   4,000 cal.</text>
+            </g>
+            <g class="bar">
+              <rect width="500" height="29" y="80"></rect>
+              <text x="505" y="98" dy=".105em">5/3:   5,000 cal.</text>
+            </g>
+            <g class="bar">
+              <rect width="450" height="29" y="120"></rect>
+              <text x="455" y="138" dy=".30em">5/4:   4500 cal.</text>
+            </g>
+          </svg>
+
         
-            </div>
-            </div>
-  
-              
+
+
+                    
               <form id="filter" class= "filter"> 
                  
                   <div class= "printRefresh"><h2 class= "hero black"> Escalante </h2>
@@ -257,15 +281,7 @@
         </section>
 
 
-        
-
-
-
-
-        <section>
-
-
-      
+        <section>  
           
         <div class= "hidden" id= "resultsTitle">
           <h2 class= "sorry purple">Sorry, there are no results for this search term, try again!</h2> 
@@ -273,7 +289,7 @@
           <div class= "printRefresh" id= "printRpurplesh">
               <p class= "montebello button"><a href="#topB" class= "noDeco">By Brand only</a></p>
               
-              <p class= "montebello button"><a href="#home" class= "noDeco">Add items</a></p>
+              <p class= "montebello button"><a href="#home" class= "noDeco">Search more items</a></p>
 
               <button id="js-refreshForm" type="submit" class= "black montebello skinBackground">Clear</button>
               
@@ -288,11 +304,13 @@
                 <th class= "imageH">Image</th>
                 <th class= "itemH">Item</th>
                 <th class= "brandH">Brand</th>
-                <th class= "servingH">Serving Quantity</th>
+                <th class= "servingH">Serving Quantity (adjust)</th>
                 <th class= "unitH">Unit</th>
                 <th class= "weightH">Weight (grams)</th>
-                <th class= "caloriesH cal calS">Calories per Serving</th>
+                <th class= "caloriesH cal calS">Calories</th>
                 <th class= "caloriesH">Calories per 100g</th>
+                <th class= "add">Add to pack</th>
+              
               
              </tr>
             </thead>
@@ -305,7 +323,7 @@
             <h3>See your highest energy results!</h3>
           
             <div class= "printRefresh">
-              <p class= "montebello button"><a href="#home" class= "noDeco">Add items</a></p>
+              <p class= "montebello button"><a href="#home" class= "noDeco">Search more items</a></p>
               <button id="js-PrintB" type="button" class= "dark montebello whiteBackground">Print</button>
             </div>
                    
@@ -320,8 +338,9 @@
                 <th class= "servingH">Serving Quantity</th>
                 <th class= "unitH">Unit</th>
                 <th class= "weightH">Weight (grams)</th>
-                <th class= "caloriesH cal calS">Calories per Serving</th>
+                <th class= "caloriesH cal calS">Calories</th>
                 <th class= "caloriesH">Calories per 100g</th>
+                <th class= "add">Add to pack</th>
               
              </tr>
             </thead>
@@ -329,6 +348,109 @@
          </div>
 
   </section>
+
+  <section>  
+          
+    <div id= "resultsTitle">
+     
+      <h3>Escalante!</h3> 
+      <form>      
+        <div class= "printRefresh" id= "printRpurplesh">
+          <p class= "montebello button"><a class= "noDeco">Delete selected</a></p>
+          
+          <p class= "montebello button"><a href="#home" class= "noDeco">Search more items</a></p>
+
+          <button id="js-refreshForm" type="submit" class= "black montebello skinBackground">Clear</button>
+          
+          <button id="js-Print" type="button" class= "dark montebello whiteBackground" >Print</button>
+        </div>
+
+    
+        
+          <table id= "results">              
+                  
+              <tr class= "blueBackground white">
+              <th class= "imageH">Image</th>
+              <th class= "date">Date</th>
+              <th class= "type">Breakfast</th>
+              <th class= "traveler">Taveler</th>
+              <th class= "itemH">Item</th>
+              <th class= "brandH">Brand</th>
+              <th class= "servingH">Serving Quantity (adjust)</th>
+              <th class= "unitH">Unit</th>
+              <th class= "weightH tooltip gram">Weight (grams)</th>
+              <th class= "caloriesH cal calS">Calories</th>
+              <th class= "deleteH">Delete</th>
+            
+          </tr>
+
+          <tr class= "one whiteBackground black">
+              
+            <td class= "imageH"><img class= "tableImage" src="" alt= "Item image"></td>
+            <th class= "date">5/1/2020</th>
+            <th class= "type">Breakfast</th>
+            <th class= "traveler">Stef</th>
+            <td class= "itemH">Swiss Miss Cocoa</td>
+            <td class= "brandId">Nestle</td>
+            <td class= "servingH">2</td>
+            <td class= "unitH">packs</td>
+            <td class= "weightH">100</td>
+            <td class="caloriesH tooltip cal calS">200</td>
+            <td class ="delete">  <input type="checkbox" class = "delete">
+              </td>
+                  
+          </tr>
+
+          <tr class= "one whiteBackground black">
+              
+            <td class= "imageH"><img class= "tableImage" src="" alt= "Item image"></td>
+            <th class= "date">5/2/2020</th>
+            <th class= "type">Breakfast</th>
+            <th class= "traveler">Jack</th>
+            <td class= "itemH">Oatmeal</td>
+            <td class= "brandId">Trader Joe</td>
+            <td class= "servingH">2</td>
+            <td class= "unitH">packs</td>
+            <td class= "weightH">100</td>
+            <td class="caloriesH tooltip cal calS">200</td>
+            <td class ="delete">  <input type="checkbox" class = "delete">
+              </td>
+                  
+          </tr>
+
+
+
+
+        </table>
+       </div>
+    </form>
+ </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
 <footer>
      	 <ul class= "social">
