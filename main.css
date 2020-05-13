@@ -330,10 +330,11 @@ input {
   margin-left: 4px;
 }
 
-input[type=number] {
-  width: 150px;
+input[type=date] {
+  width: 350px;
   margin-top: 4px;
 }
+
 
 input::placeholder { 
   color: rgba(242, 230, 223);
@@ -347,8 +348,13 @@ input[type="search"]{
   width: 100%;
 }
 
-.names {
+input[type="text"]{
   width: 10%;
+  text-align: center
+}
+
+.names {
+  width: 20%;
   margin-bottom: -50px;
 }
 
@@ -690,6 +696,17 @@ div.scroll {
   overflow-x: hidden;
   overflow-y: auto;
   margin-right: 40px;
+}
+
+
+/*div.scrollTable {
+  display: hidden
+}*/
+
+div.scrollTable {
+  height: 30px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 
@@ -1091,13 +1108,20 @@ input.delete {
   background-color: rgba(242, 76, 61, 1); 
 }
 
+input.adjust {
+  text-align: center;
+  width: 80px;
+  height: 50px;
+  background-color: rgba(242, 230, 223);
+}
+
 
 .addH {
-  background-color: rgba(49, 31, 115)
+  background-color:rgba(49, 31, 115)
   
 }
 .add:hover {
-  background-color: rgba(49, 31, 115);
+  background-color: lightpink;
   zoom:0.9;
   text-align: center;
 }

@@ -39,7 +39,7 @@
 
           <form id="js-tripForm" class= "homeForm">
           <h2>Plan a trip!</h2>
-            <p class = "search"><label>Trip Name<input type="text" name="trip-name" class="salmonBackground white search" id="js-trip-name" placeholder="Escalante" required></label>
+            <p class = "search"><label>New trip Name<input type="text" name="trip-name" class="salmonBackground white search" id="js-trip-name" placeholder="Escalante" required></label>
             </p>
 
             <p class="search">
@@ -47,16 +47,15 @@
               <label>End date<input type="date" required> </label>            
             </p>
 
-            <p class="search"><label>No of travelers<input type="number" name="no-travelers" id="js-no-travelers" class="whiteBackground black max" value= "4" min = "1" max = "4" required></label> </p>
-
-            <p class="search names">
-            <label>Names</label></p>
             
-            <p class="search">
-              <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Jack">
+            <p class="search names">
+            <label>Traveler Names</label></p>
+            
+               <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Jack">
               <input type="text" onfocus="this.value=''"  name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Stef">
               <input type="text" onfocus="this.value=''"  name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Emi">
-              <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Mari">
+              <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Marielle">
+              <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "+">
              <p>
             <input type="submit" class= "white montebello blackBackground go" value="Go!" id= "top">
             </p>
@@ -121,7 +120,7 @@
               <form id="filter" class= "filter"> 
                  
                   <div class= "printRefresh"><h2 class= "hero black"> Escalante </h2>
-                    <button id="js-filterForm" type="submit" class= "black montebello skinBackground">Filter</button>
+                    <button id="js-filterForm" type="submit" class= "black montebello skinBackground"><a href="#filter">Filter</a></button>
                            
                     <button id="js-resetForm" type="reset" class= "black montebello skinBackground">Reset</button>
                  </div>
@@ -129,6 +128,8 @@
                 <div class = "main">
 
                 <div class= "filterSelection"> <h3 class = "filterName">Select dates</h3>
+                  <div class= "scroll"> 
+                  
 
                   <label class="container">All
                     <input type="checkbox" checked="checked">
@@ -154,9 +155,26 @@
                     <input type="checkbox">
                     <span class="checkmark"></span>
                   </label>
+
+                  <label class="container">5/5/2019
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">5/6/2019
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+
+
+
+
+                  </div>
                   </div>
 
-                  <div class= "filterSelection"> <h3 class = "filterName">Meal type</h3>
+                  <div class= "filterSelection"> <h3 class = "filterName">Type</h3>
+
+                    <div class= "scroll"> 
 
                     <label class="container">All
                       <input type="checkbox" checked="checked">
@@ -182,6 +200,15 @@
                       <input type="checkbox">
                       <span class="checkmark"></span>
                     </label>
+
+                    <label class="container">Other
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+
+
+                  </div>
+
                     </div>
                     
 
@@ -245,12 +272,12 @@
 
                     <div class= "filterSelection"> <h3 class = "filterName">Traveler</h3>
 
+                      <div class= "scroll"> 
+
                       <label class="container">All
                         <input type="checkbox" checked="checked"> >
                         <span class="checkmark"></span>
                       </label>
-
-
 
                       <label class="container">Jack
                         <input type="checkbox" >
@@ -291,9 +318,20 @@
               
               <p class= "montebello button"><a href="#home" class= "noDeco">Search more items</a></p>
 
-              <button id="js-refreshForm" type="submit" class= "black montebello skinBackground">Clear</button>
+
+              <p class= "montebello button"><a href="#custom" class= "noDeco">Add custom item</a></p>
+
+
+                           
+              <button id="js-save" type="button" class= "dark montebello whiteBackground" >Save</button>
+
               
               <button id="js-Print" type="button" class= "dark montebello whiteBackground" >Print</button>
+
+              <button id="js-refreshForm" type="submit" class= "black montebello skinBackground">Clear</button>
+
+
+
             </div>
             
           <table id= "results">              
@@ -309,7 +347,7 @@
                 <th class= "weightH">Weight (grams)</th>
                 <th class= "caloriesH cal calS">Calories</th>
                 <th class= "caloriesH">Calories per 100g</th>
-                <th class= "add">Add to pack</th>
+                <th class= "addH">Add to pack</th>
               
               
              </tr>
@@ -324,6 +362,14 @@
           
             <div class= "printRefresh">
               <p class= "montebello button"><a href="#home" class= "noDeco">Search more items</a></p>
+
+
+              <p class= "montebello button"><a href="#custom" class= "noDeco">Add custom item</a></p>
+
+              <button id="js-save" type="button" class= "dark montebello whiteBackground" >Save</button>
+
+
+
               <button id="js-PrintB" type="button" class= "dark montebello whiteBackground">Print</button>
             </div>
                    
@@ -335,12 +381,13 @@
                 <th class= "imageH">Image</th>
                 <th class= "itemH">Item</th>
                 <th class= "brandH">Brand</th>
-                <th class= "servingH">Serving Quantity</th>
+                <th class= "servingH">Serving Quantity (adjust)
+                  </th>
                 <th class= "unitH">Unit</th>
                 <th class= "weightH">Weight (grams)</th>
                 <th class= "caloriesH cal calS">Calories</th>
                 <th class= "caloriesH">Calories per 100g</th>
-                <th class= "add">Add to pack</th>
+                <th class= "addH">Add to pack</th>
               
              </tr>
             </thead>
@@ -353,16 +400,23 @@
           
     <div id= "resultsTitle">
      
-      <h3>Escalante!</h3> 
+      <h3 id="filter">Escalante!</h3> 
       <form>      
         <div class= "printRefresh" id= "printRpurplesh">
           <p class= "montebello button"><a class= "noDeco">Delete selected</a></p>
           
           <p class= "montebello button"><a href="#home" class= "noDeco">Search more items</a></p>
 
+
+          <p class= "montebello button"><a href="#custom" class= "noDeco">Add custom item</a></p>
+
+          <button id="js-save" type="button" class= "dark montebello whiteBackground" >Save</button>
+
+          <button id="js-Print" type="button" class= "dark montebello whiteBackground" >Print</button>
+
+
           <button id="js-refreshForm" type="submit" class= "black montebello skinBackground">Clear</button>
           
-          <button id="js-Print" type="button" class= "dark montebello whiteBackground" >Print</button>
         </div>
 
     
@@ -371,9 +425,11 @@
                   
               <tr class= "blueBackground white">
               <th class= "imageH">Image</th>
-              <th class= "date">Date</th>
-              <th class= "type">Breakfast</th>
-              <th class= "traveler">Taveler</th>
+              <th class= "date">Date (ajdust)
+              </th>
+              <th class= "type">Type (adjust)
+              </th>
+              <th class= "traveler">Traveler (adjust)</th>
               <th class= "itemH">Item</th>
               <th class= "brandH">Brand</th>
               <th class= "servingH">Serving Quantity (adjust)</th>
@@ -387,12 +443,120 @@
           <tr class= "one whiteBackground black">
               
             <td class= "imageH"><img class= "tableImage" src="" alt= "Item image"></td>
-            <th class= "date">5/1/2020</th>
-            <th class= "type">Breakfast</th>
-            <th class= "traveler">Stef</th>
+            <th class= "date">5/1/2020
+              <div class= "scrollTable"> 
+                <label class="container plum">All
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container plum">5/1/2019
+                  <input type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">5/2/2019
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">5/3/2019
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">5/4/2019
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container plum">5/5/2019
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container plum">5/6/2019
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+               </div>
+
+
+
+
+            </th>
+            <th class= "type">Breakfast
+
+              <div class= "scrollTable"> 
+
+                <label class="container plum">All
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container plum">Breakfast
+                  <input type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Lunch
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Dinner
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Snack
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container plum">Other
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+
+
+              </div>
+            </th>
+            <th class= "traveler">Stef
+
+              <div class= "scrollTable"> 
+
+                <label class="container plum">All
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container plum">Jack
+                  <input type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Stef
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Emi
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Marielle
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              
+              </div>
+
+
+            </th>
             <td class= "itemH">Swiss Miss Cocoa</td>
             <td class= "brandId">Nestle</td>
-            <td class= "servingH">2</td>
+            <td class= "servingH">2<input type="number" class = "adjust" min="0" step="0.1"></td>
             <td class= "unitH">packs</td>
             <td class= "weightH">100</td>
             <td class="caloriesH tooltip cal calS">200</td>
@@ -404,12 +568,125 @@
           <tr class= "one whiteBackground black">
               
             <td class= "imageH"><img class= "tableImage" src="" alt= "Item image"></td>
-            <th class= "date">5/2/2020</th>
-            <th class= "type">Breakfast</th>
-            <th class= "traveler">Jack</th>
+            <th class= "date">5/2/2020
+
+              <div class= "scrollTable"> 
+                <label class="container plum">All
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container plum">5/1/2019
+                  <input type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">5/2/2019
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">5/3/2019
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">5/4/2019
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container plum">5/5/2019
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container plum">5/6/2019
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+               </div>
+              
+           </th>
+            <th class= "type">Breakfast
+
+              <div class= "scrollTable"> 
+
+                <label class="container plum">All
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container plum">Breakfast
+                  <input type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Lunch
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Dinner
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Snack
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container plum">Other
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+
+
+              </div>
+
+
+
+
+            </th>
+            <th class= "traveler">Jack
+
+              <div class= "scrollTable"> 
+
+                <label class="container plum">All
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container plum">Jack
+                  <input type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Stef
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Emi
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container plum">Marielle
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              
+              </div>
+
+              
+
+
+            </th>
+            
             <td class= "itemH">Oatmeal</td>
             <td class= "brandId">Trader Joe</td>
-            <td class= "servingH">2</td>
+            <td class= "servingH">2<input type="number" class = "adjust" min="0" step="0.1"></td>
             <td class= "unitH">packs</td>
             <td class= "weightH">100</td>
             <td class="caloriesH tooltip cal calS">200</td>

@@ -65,7 +65,7 @@
             
                   <td class= "brandId">${Object.keys(responseJson)[0]}</th>
             
-                  <td class= "servingH tooltip quant">${Math.round(responseJson.common[i].serving_qty)}<span class="tooltiptext">Serving Quantity</span></th>
+                  <td class= "servingH tooltip quant">${Math.round(responseJson.common[i].serving_qty)}<span class="tooltiptext"><input type="number" class = "adjust" min="0" step="0.1">Serving Quantity</span></td>
             
                   <td class= "unitH">${responseJson.common[i].serving_unit}</td>
             
@@ -74,6 +74,30 @@
                   <td class= "caloriesH tooltip cal calS">${Math.round(responseJson.common[i].full_nutrients[4].value)}<span class="tooltiptext"><span><- cal per serving</span><span>&nbsp -> cal per 100g</span></span></td>
             
                   <td class= "caloriesH cal tooltip calG">${calPer100g}</td>
+
+                  <td class= "add">
+                  
+                  <div class= "scrollTable"> 
+
+                    <label class="container black">Escalante
+                      <input type="checkbox" >
+                      <span class="checkmark"></span>
+                    </label>
+                    
+                    <label class="container black">Muktinath
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    
+                    <label class="container black">Tende
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    
+                  </div>
+                  </td>
+
+
                 </tr>`
           )
               
@@ -109,7 +133,7 @@
             
                   <td class= "brandId">${responseJson.branded[j].brand_name}</th>
             
-                  <td class= "servingH tooltip quant">${Math.round(responseJson.branded[j].serving_qty)}<span class="tooltiptext">Serving Quantity</span></th>
+                  <td class= "servingH tooltip quant">${Math.round(responseJson.branded[j].serving_qty)}<span class="tooltiptext"><input type="number" class = "adjust" min="0" step="0.1">Serving Quantity</span></td>
             
                   <td class= "unitH">${responseJson.branded[j].serving_unit}</td>
             
@@ -117,20 +141,39 @@
             
                   <td class= "caloriesH tooltip cal calS">${Math.round(responseJson.branded[j].full_nutrients[3].value)}<span class="tooltiptext"><span><- cal per serving</span><span>&nbsp -> cal per 100g</span></span></td>
             
-                  <td class= "caloriesH cal tooltip calG">${calPer100gB}
-            </tr>` 
-        )
+                  <td class= "caloriesH cal tooltip calG">${calPer100gB}</td>
+
+                  <td class= "add"><div class= "scrollTable"> 
+
+                  <label class="container black">Escalante
+                    <input type="checkbox" >
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                  <label class="container black">Muktinath
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                  <label class="container black">Tende
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  
+                </div>
+                  </td>
+            </tr>`)
 
         // append branded food to brand only results table 
        $('#resultsB').append(
         `<tr class= "one whiteBackground black">
                   <td class= "imageH"><img class= "tableImage" src=${responseJson.branded[j].photo.thumb} alt= "Item image"></td>
   
-                  <td class= "itemH">${responseJson.branded[j].food_name}</th>
+                  <td class= "itemH">${responseJson.branded[j].food_name}</td>
   
-                  <td class= "brandId">${responseJson.branded[j].brand_name}</th>
+                  <td class= "brandId">${responseJson.branded[j].brand_name}</td>
   
-                  <td class= "servingH tooltip quant">${Math.round(responseJson.branded[j].serving_qty)}<span class="tooltiptext">Serving Quantity</span></th>
+                  <td class= "servingH tooltip quant">${Math.round(responseJson.branded[j].serving_qty)}<span class="tooltiptext"><input type="number" class = "adjust" min="0" step="0.1">Serving Quantity</span></td>
   
                   <td class= "unitH">${responseJson.branded[j].serving_unit}</td>
   
@@ -138,7 +181,27 @@
   
                   <td class= "caloriesH tooltip cal calS">${Math.round(responseJson.branded[j].full_nutrients[3].value)}<span class="tooltiptext"><span><- cal per serving</span><span>&nbsp -> cal per 100g</span></span></td>
   
-                <td class= "caloriesH cal tooltip calG">${calPer100gB}
+                <td class= "caloriesH cal tooltip calG">${calPer100gB}</td>
+
+                <td class= "add"><div class= "scrollTable"> 
+
+                <label class="container black">Escalante
+                  <input type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container black">Muktinath
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="container black">Tende
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+              </div>
+                </td>
         </tr>`)
             
       }
