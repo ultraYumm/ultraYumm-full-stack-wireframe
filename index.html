@@ -11,11 +11,11 @@
 </head>
 
 <body>
-	
 		<nav class="navbar skin" role="navigation">
 			<header>
         <a href="#home" class="noDeco"><img class="homeLogo" src="images/uYhomeLogo.png" alt= "ultraYumm home button"></a>
-        <span class= "about"><span><a href="#myTrips" class= "noDeco white">My trips</a></span></span>
+    <!--User can access previously saved trips--> 
+	        <span class= "about"><span><a href="#myTrips" class= "noDeco white">My trips</a></span></span>
         <span id= "snowyOwl" class= "snowyOwl gif"></span>
 	    </header>
       </nav>
@@ -23,11 +23,15 @@
              <h1 class= "hero black" id= "home"> Get more energy!<span>&nbsp;&nbsp;</span><span class= "lighter">pack lighter</span></h1>
       
        <section class="home">
+         <!--User can jump straight to a quick search without having to enter trip details--> 
+         <!--User can set new trip details including name, dates, no. and name of travelers and upload trip picture or google maps location-->  
+         
            
         <p id="js-error-message" class="error-message"></p>
         
         <form id="js-getForm" class= "homeForm">
-          <h2>Quick search!</h2>
+  
+	          <h2>Quick search!</h2>
             <p class = "search"><label>Search by name or brand<input type="search" name="search-term" class="plumBackground white search" id="js-search-term" placeholder="granola, Kind Bar, Backpacker's Pantry, etc." required></label>
             </p>
             <input type="number" name="max-results" id="js-max-results" class="hidden" value= "30">
@@ -38,6 +42,7 @@
           </form>
 
           <form id="js-tripForm" class= "homeForm">
+          
           <h2>Plan a trip!</h2>
             <p class = "search"><label id="new">New trip Name<input type="text" name="trip-name" class="salmonBackground white search" id="js-trip-name" placeholder="Escalante" required></label>
             </p>
@@ -49,21 +54,21 @@
 
             
             <p class="search names">
-            <label>Traveler Names</label></p>
+            <label>Traveler Name</p>
             
-               <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Jack">
-              <input type="text" onfocus="this.value=''"  name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Stef">
-              <input type="text" onfocus="this.value=''"  name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Emi">
-              <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Marielle">
-              <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "+">
+               <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers1" class="mauveBackground white max" value= "Jack">
+              <input type="text" onfocus="this.value=''"  name="name-travelers" id="js-name-travelers2" class="mauveBackground white max" value= "Stef">
+              <input type="text" onfocus="this.value=''"  name="name-travelers" id="js-name-travelers3" class="mauveBackground white max" value= "Emi">
+              <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers4" class="mauveBackground white max" value= "Marielle">
+              <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers-add" class="mauveBackground white max" value= "+">
              <p>
             <input type="submit" class= "white montebello blackBackground go" value="Go!">
             </p>
           </form>
         </section>
        
-       
-        <section class="home">
+         <section class="home">
+             <!--User can view list of all previously saved trips-->      
           <h2 id= "myTrips" class = "hero black">My trips!</h2>
             <ul class = "trips">
               <li class = "tripLi"><iframe class = "tripImage" src="https://www.google.com/maps/embed?pb=!4v1589308620339!6m8!1m7!1sH9R4rDjmbhhsQVA2f0Dq8Q!2m2!1d36.03291467946964!2d-111.8531019810478!3f9.17!4f0!5f0.7820865974627469">
@@ -81,7 +86,9 @@
              </ul>
         </section>
       
-        <section id="escalante"> 
+                        
+        <section id="escalante">
+          <!--When user clicks on a specific trip, can view summary trip calorie and weight data, then set filters by date, type, traveler to see detailed results-->  
     
            <iframe class = "tripImage" src="https://www.google.com/maps/embed?pb=!4v1589308620339!6m8!1m7!1sH9R4rDjmbhhsQVA2f0Dq8Q!2m2!1d36.03291467946964!2d-111.8531019810478!3f9.17!4f0!5f0.7820865974627469"></iframe>
            
@@ -298,6 +305,9 @@
         </section>
 
         <section>  
+   
+   <!--User can see from quick search by food name or brand a list ordered by highest caloric value in descending order-->   
+   <!--User can select items from the list and add them to a previously saved trip or be directed to create a new trip-->   
           
         <div class= "hidden" id= "resultsTitle">
           <h2 class= "sorry purple">Sorry, there are no results for this search term, try again!</h2> 
@@ -384,6 +394,11 @@
   </section>
 
   <section>
+    <!--User can see filtered list of items saved and assigned to a specific trip and make adjustments to dates, type, travelr as well as delete an item
+    User can search for new items to add to the trip, add custom items, or delete items
+    Modifications can be saved, and trip can also be renamed or saved as a new trip
+    -->   
+
     
     <iframe class = "tripImage" src="https://www.google.com/maps/embed?pb=!4v1589308620339!6m8!1m7!1sH9R4rDjmbhhsQVA2f0Dq8Q!2m2!1d36.03291467946964!2d-111.8531019810478!3f9.17!4f0!5f0.7820865974627469"></iframe>
            
@@ -426,6 +441,10 @@
           <p class= "montebello button"><a class= "noDeco">Add custom item</a></p>
 
           <button id="js-save-filtered" type="button" class= "dark montebello whiteBackground" >Save</button>
+
+          <button id="js-save-as-filtered" type="button" class= "dark montebello whiteBackground" >Save as</button>
+
+          <button id="js-rename-filtered" type="button" class= "dark montebello whiteBackground" >Rename</button>
 
           <button id="js-print-filtered" type="button" class= "dark montebello whiteBackground" >Print</button>
 
@@ -702,9 +721,10 @@
     </form>
  </section>
 
+  <section id= "customItem"> 
 
- <section id= "customItem"> 
-  
+  <!--User can add custom items, either their caloric information and assign them to a trip and associated dates, type and traveler-->   
+
      <form class= "filter"> 
         
          <div class= "printRefresh"><h2 class= "hero black"> Custom Item </h2>
