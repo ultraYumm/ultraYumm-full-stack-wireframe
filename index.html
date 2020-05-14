@@ -15,7 +15,7 @@
 		<nav class="navbar skin" role="navigation">
 			<header>
         <a href="#home" class="noDeco"><img class="homeLogo" src="images/uYhomeLogo.png" alt= "ultraYumm home button"></a>
-        <span class= "about"><span><a href="#myTrips" class= "salmonBackground">My trips</a></span></span>
+        <span class= "about"><span><a href="#myTrips" class= "noDeco white">My trips</a></span></span>
         <span id= "snowyOwl" class= "snowyOwl gif"></span>
 	    </header>
       </nav>
@@ -31,7 +31,7 @@
             <p class = "search"><label>Search by name or brand<input type="search" name="search-term" class="plumBackground white search" id="js-search-term" placeholder="granola, Kind Bar, Backpacker's Pantry, etc." required></label>
             </p>
             <input type="number" name="max-results" id="js-max-results" class="hidden" value= "30">
-            </p>
+            
             <p>
             <input type="submit" class= "white montebello blackBackground go" value="Go!" id= "top">
             </p>
@@ -57,7 +57,7 @@
               <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "Marielle">
               <input type="text" onfocus="this.value=''" name="name-travelers" id="js-name-travelers" class="mauveBackground white max" value= "+">
              <p>
-            <input type="submit" class= "white montebello blackBackground go" value="Go!" id= "top">
+            <input type="submit" class= "white montebello blackBackground go" value="Go!">
             </p>
           </form>
         </section>
@@ -74,14 +74,14 @@
               <a href="#muktinath" class = "trip noDeco">Muktinath              
                 </a></li>
 
-              <li class = "tripLi"><iframe class = "tripImage"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d366762.0812983096!2d7.270349863379504!3d44.09720792783267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cd9c413ae99b5b%3A0x40819a5fd9795c0!2s06430%20Tende%2C%20France!5e0!3m2!1sen!2sus!4v1589313081562!5m2!1sen!2sus" ></iframe>
+              <li class = "tripLi"><iframe class = "tripImage" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d366762.0812983096!2d7.270349863379504!3d44.09720792783267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cd9c413ae99b5b%3A0x40819a5fd9795c0!2s06430%20Tende%2C%20France!5e0!3m2!1sen!2sus!4v1589313081562!5m2!1sen!2sus" ></iframe>
                 <a href="#tende" class = "trip noDeco">Tende             
                 </a>
               </li>
              </ul>
         </section>
       
-        <section id= "escalante"> 
+        <section id="escalante"> 
     
            <iframe class = "tripImage" src="https://www.google.com/maps/embed?pb=!4v1589308620339!6m8!1m7!1sH9R4rDjmbhhsQVA2f0Dq8Q!2m2!1d36.03291467946964!2d-111.8531019810478!3f9.17!4f0!5f0.7820865974627469"></iframe>
            
@@ -93,7 +93,7 @@
           </svg>
           
 
-           <svg class= "chart" width="1000" height="200" aria-labelledby="title desc" role="img">
+           <svg class= "chart" width="1000" height="200" role="img">
             
             <g class="bar">
               <rect width="350" height="29"></rect>
@@ -117,7 +117,7 @@
               <form id="filter" class= "filter"> 
                  
                   <div class= "printRefresh"><h2 class= "hero black"> Escalante </h2>
-                    <button id="js-filterForm" type="submit" class= "black montebello skinBackground"><a href="#filter">Filter</a></button>
+                    <button id="js-filterForm" type="submit" class= "black montebello skinBackground">Filter</button>
                            
                     <button id="js-resetForm" type="reset" class= "black montebello skinBackground">Reset</button>
                  </div>
@@ -202,7 +202,7 @@
 
                   </div>
 
-                    </div>
+               </div>
                     
 
                     <div class= "filterSelection "> <h3 class = "filterName">Item</h3>
@@ -290,7 +290,8 @@
                       </label>
                     
                     </div>
-                    </div>  
+                    </div> 
+                  </div> 
                 
                 </form>
               
@@ -352,9 +353,9 @@
               <p class= "montebello button"><a href="#home" class= "noDeco">Search more items</a></p>
 
 
-              <p class= "montebello button"><a href="#custom" class= "noDeco">Add custom item</a></p>
+              <p class= "montebello button"><a class= "noDeco">Add custom item</a></p>
 
-              <button id="js-save" type="button" class= "dark montebello whiteBackground" >Save</button>
+              <button id="js-saveB" type="button" class= "dark montebello whiteBackground" >Save</button>
 
               <button id="js-PrintB" type="button" class= "dark montebello whiteBackground">Print</button>
             </div>
@@ -394,7 +395,7 @@
    </svg>
    
 
-    <svg class= "chart" width="1000" height="200" aria-labelledby="title desc" role="img">
+    <svg class= "chart" width="1000" height="200" role="img">
      
      <g class="bar">
        <rect width="350" height="29"></rect>
@@ -414,31 +415,27 @@
      </g>
    </svg>
    
-    <div id= "resultsTitle">
-     
-      <h3 id="filter">Escalante!</h3> 
+      <h3>Escalante!</h3> 
+
       <form>      
-        <div class= "printRefresh" id= "printRpurplesh">
+        <div class= "printRefresh">
           <p class= "montebello button"><a class= "noDeco">Delete selected</a></p>
           
           <p class= "montebello button"><a href="#home" class= "noDeco">Search more items</a></p>
 
+          <p class= "montebello button"><a class= "noDeco">Add custom item</a></p>
 
-          <p class= "montebello button"><a href="#custom" class= "noDeco">Add custom item</a></p>
+          <button id="js-save-filtered" type="button" class= "dark montebello whiteBackground" >Save</button>
 
-          <button id="js-save" type="button" class= "dark montebello whiteBackground" >Save</button>
+          <button id="js-print-filtered" type="button" class= "dark montebello whiteBackground" >Print</button>
 
-          <button id="js-Print" type="button" class= "dark montebello whiteBackground" >Print</button>
+          <button id="js-refreshForm-filtered" type="submit" class= "black montebello skinBackground">Clear</button>
+         </div> 
 
-
-          <button id="js-refreshForm" type="submit" class= "black montebello skinBackground">Clear</button>
-          
-        </div> 
-        
-          <table id= "results">              
+          <table id= "results-filtered">              
                   
-              <tr class= "blueBackground white">
-              <th class= "imageH">Image</th>
+            <tr class= "blueBackground white">
+              <th class= "imageH"></th>
               <th class= "date">Date (ajdust)
               </th>
               <th class= "type">Type (adjust)
@@ -451,12 +448,12 @@
               <th class= "weightH tooltip gram">Weight (grams)</th>
               <th class= "caloriesH cal calS">Calories</th>
               <th class= "deleteH">Delete</th>
-            
-          </tr>
+             </tr>
 
           <tr class= "one whiteBackground black">
               
-            <td class= "imageH"><img class= "tableImage" src="" alt= "Item image"></td>
+            <td class= "imageH"><img class= "tableImage" src="https://nix-tag-images.s3.amazonaws.com/399_thumb.jpg" alt= "Item image"></td>
+            
             <th class= "date">5/1/2020
               <div class= "scrollTable"> 
                 <label class="container plum">All
@@ -493,8 +490,8 @@
                   <span class="checkmark"></span>
                 </label>
                </div>
-
             </th>
+
             <th class= "type">Breakfast
 
               <div class= "scrollTable"> 
@@ -528,8 +525,6 @@
                   <input type="checkbox">
                   <span class="checkmark"></span>
                 </label>
-
-
               </div>
             </th>
 
@@ -564,22 +559,21 @@
               
               </div>
 
-
             </th>
-            <td class= "itemH">Swiss Miss Cocoa</td>
-            <td class= "brandId">Nestle</td>
-            <td class= "servingH">2<input type="number" class = "adjust" min="0" step="0.1"></td>
-            <td class= "unitH">packs</td>
-            <td class= "weightH">100</td>
-            <td class="caloriesH tooltip cal calS">200</td>
-            <td class ="delete">  <input type="checkbox" class = "delete">
-              </td>
-                  
+                <td class= "itemH">Swiss Miss Cocoa</td>
+                <td class= "brandId">Nestle</td>
+                <td class= "servingH">2<input type="number" class = "adjust" min="0" step="0.1"></td>
+                <td class= "unitH">packs</td>
+                <td class= "weightH">100</td>
+                <td class="caloriesH tooltip cal calS">200</td>
+                <td class ="delete">  <input type="checkbox" class = "delete">
+                  </td>
+                      
           </tr>
 
           <tr class= "one whiteBackground black">
               
-            <td class= "imageH"><img class= "tableImage" src="" alt= "Item image"></td>
+            <td class= "imageH"><img class= "tableImage" src="https://nix-tag-images.s3.amazonaws.com/399_thumb.jpg" alt= "Item image"></td>
             <th class= "date">5/2/2020
 
               <div class= "scrollTable"> 
@@ -619,6 +613,7 @@
                </div>
               
            </th>
+
             <th class= "type">Breakfast
 
               <div class= "scrollTable"> 
@@ -657,6 +652,7 @@
               </div>
 
             </th>
+
             <th class= "traveler">Jack
 
               <div class= "scrollTable"> 
@@ -702,34 +698,34 @@
           </tr>
 
         </table>
-       </div>
+        
     </form>
  </section>
 
 
  <section id= "customItem"> 
   
-     <form id="customItem" class= "filter"> 
+     <form class= "filter"> 
         
          <div class= "printRefresh"><h2 class= "hero black"> Custom Item </h2>
-           <button id="js-filterForm" type="submit" class= "black montebello skinBackground"><a href="#filter">Save</a></button>
+           <button id="js-save-custom" type="submit" class= "black montebello skinBackground">Save</button>
                   
-           <button id="js-resetForm" type="reset" class= "black montebello skinBackground">Reset</button>
+           <button id="js-reset-custom" type="reset" class= "black montebello skinBackground">Reset</button>
         </div>
 
        <div class = "main">
-        <div class= "itemDetails"> 
+    
 
-        <div class = "itemDetails"><label id="new" class= "detailLabel">New Item Name</label><input type="text" name="trip-name" class="salmonBackground white detailInput" id="js-trip-name" placeholder="Spicy mango" required>
+        <div class = "itemDetails"><label class= "detailLabel">New Item Name</label><input type="text" name="new-name" class="salmonBackground white detailInput" id="js-new-name" placeholder="Spicy mango" required>
         </div>
 
-        <div class = "itemDetails"><label id="new" class= "detailLabel">Brand</label><input type="text" name="trip-name" class="salmonBackground white detailInputName" id="js-trip-name" placeholder="Emi bites" required>
+        <div class = "itemDetails"><label class= "detailLabel">Brand</label><input type="text" name="new-brand" class="salmonBackground white detailInputName" id="js-new-brand" placeholder="Emi bites" required>
         </div>
 
     
         <div class = "itemDetails">
           
-          <label id="new" class= "detailLabel">Serving Quantity</label>
+          <label class= "detailLabel">Serving Quantity</label>
           
           <input type="number" class = "detailInput" min="0" step="0.1" placeholder= "1">
           
@@ -754,14 +750,14 @@
             <label class="container black">Leaf
               <input type="checkbox">
               <span class="checkmark"></span>
-            </label>
+            </label>  
           </div>       
           
         </div>        
 
         <div class = "itemDetails">
           
-          <label id="new" class= "detailLabel">Calories Per Serving</label>
+          <label class= "detailLabel">Calories Per Serving</label>
           
           <input type="number" class = "detailInput black" min="0" placeholder = "50">
 
@@ -769,7 +765,7 @@
 
       <div class = "itemDetails">
           
-        <label id="new" class= "detailLabel">Total Calories</label>
+        <label class= "detailLabel">Total Calories</label>
         
         <input type="number" class = "result detailInput" min="0" value = "300">
 
@@ -777,7 +773,7 @@
 
     <div class = "itemDetails">
           
-      <label id="new" class= "detailLabel">Total Weight (grams)</label>
+      <label class= "detailLabel">Total Weight (grams)</label>
       
       <input type="number" class = "result detailInput" min="0" value = "100">
 
@@ -947,7 +943,7 @@
     <script src="index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script>
-    <script type="text/javascript"></script>
+    <script></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     
   </body>
