@@ -93,6 +93,9 @@
                       <input type="checkbox">
                       <span class="checkmark"></span>
                     </label>
+
+                      <label class="container black"><a href="#new">Start new</a>
+                </label>
                     
                   </div>
                   </td>
@@ -159,6 +162,9 @@
                     <input type="checkbox">
                     <span class="checkmark"></span>
                   </label>
+
+                  <label class="container black"><a href="#new">Start new</a>
+                </label>
                   
                 </div>
                   </td>
@@ -199,6 +205,12 @@
                   <input type="checkbox">
                   <span class="checkmark"></span>
                 </label>
+
+                <label class="container black"><a href="#new">Start new</a>
+                </label>
+              </label>
+
+
                 
               </div>
                 </td>

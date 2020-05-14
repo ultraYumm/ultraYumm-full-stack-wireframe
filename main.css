@@ -349,8 +349,8 @@ input[type="search"]{
 }
 
 input[type="text"]{
-  width: 10%;
-  text-align: center
+  width: 15%;
+  text-align: left
 }
 
 .names {
@@ -618,6 +618,35 @@ padding-top: 200px;
   display: inline-block;
 }  
 
+
+.detailLabel {
+  width: 20%;
+  height: 80px;
+  display: inline-block;
+}  
+
+
+.detailInput {
+  width: 10%;
+  height: 80px;
+  display: inline-block;
+  margin-left: auto;
+  padding-left: 10px
+  
+}
+
+
+.detailInputName {
+  width: 40%;
+  height: 80px;
+  display: inline-block;
+  margin-left: auto;
+  padding-left: 10px
+  
+}  
+
+
+
 .main {
   font-size: 0;
  
@@ -699,16 +728,19 @@ div.scroll {
 }
 
 
-/*div.scrollTable {
-  display: hidden
-}*/
+
 
 div.scrollTable {
   height: 30px;
   overflow-x: hidden;
   overflow-y: auto;
 }
-
+div.scrollInput {
+  height: 80px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-bottom: -50px;
+}
 
 @media only screen and (min-width: 320px) {
 
@@ -1133,4 +1165,11 @@ input.add {
   background-color: rgba(49, 31, 115)
 }
 
-  
+.itemDetails {
+  text-align:left;
+}
+ 
+.result {
+  background-color: lightpink;
+  color: black
+}
